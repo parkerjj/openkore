@@ -9,5 +9,16 @@
 #
 #Use the item name "all" to tell kore to pickup or not pickup all items by default
 all 1
+白蚁卡片 2
+黑蚁卡片 2
+白蚁幼虫卡片 2
+*卡片 2
+吸血蝙蝠卡片 2
+卡拉蟹卡片 2
+贝壳魔灵卡片 2
+海星卡片 2
+铝原石 0
+野猪卡片 2
+
 # jellopy 0
 # fluff 0

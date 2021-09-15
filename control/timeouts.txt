@@ -10,7 +10,7 @@ charlogin 12
 maplogin 12
 play 40
 # When disconnected, wait x seconds before reconnecting again
-reconnect 30
+reconnect 3600
 
 # After repeated disconnects, wait longer before reconnecting, to reduce load on the server.
 # The first value in this list overrides the "reconnect" timeout above.
@@ -24,7 +24,7 @@ reconnect_random 20
 poseidon_wait_reply 15
 
 # Activate AI after x seconds after the map's loaded
-ai 2
+ai 1
 
 ai_move_retry 0.25
 ai_move_giveup 1
@@ -33,7 +33,7 @@ ai_homunculus_standby 0.5
 ai_mercenary_standby 0.5
 
 # Send the attack packet every x seconds, if it hasn't been send already
-ai_attack 1
+ai_attack .4
 ai_homunculus_attack 1
 ai_mercenary_attack 1
 
@@ -43,7 +43,7 @@ ai_mercenary_dance_attack_melee 0.2
 ai_mercenary_dance_attack_ranged 0.2
 
 # Check for monsters to attack every x seconds
-ai_attack_auto 0.5
+ai_attack_auto 0.3
 ai_homunculus_attack_auto 0.5
 ai_mercenary_attack_auto 0.5
 
@@ -52,16 +52,16 @@ ai_homunculus_route_adjust 0.3
 ai_mercenary_route_adjust 0.3
 
 # Ignore monster for x seconds if there is no route to it
-ai_attack_failedLOS 6
+ai_attack_failedLOS 3
 
 # Give up attacking a monster if it can't be reached within x seconds
-ai_attack_giveup 12
+ai_attack_giveup 8
 ai_check_monster_auto 0.4
 
 # If you've just killed a monster, and there are no aggressives,
 # and you're not picking up any items, wait x seconds before doing
 # anything else.
-ai_attack_waitAfterKill 0.3
+ai_attack_waitAfterKill 0
 ai_homunculus_attack_waitAfterKill 0.3
 ai_mercenary_attack_waitAfterKill 0.3
 
@@ -73,17 +73,17 @@ ai_route_unstuck 2
 # Pause for the specified number of seconds after taking something,
 # it increases the interval between taking several items and between
 # taking the last item and continuing the actions.
-ai_items_take_delay 1.4
+ai_items_take_delay 0.2
 
 # When your monster died, start checking for loot after x seconds
-ai_items_take_start 0.4
+ai_items_take_start 0.2
 
 # Stop checking for loot x seconds after it has begun checking
 ai_items_take_end 1.2
 
 # When standing near an item, send the 'take' packet every x seconds until
 # the item has been taken.
-ai_take .4
+ai_take .2
 
 # Give up if unable to pickup item after x seconds
 ai_take_giveup 3

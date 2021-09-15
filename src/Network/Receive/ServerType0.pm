@@ -736,6 +736,10 @@ sub new {
 		'0B7D' => ['guild_members_list', 'v a*', [qw(len member_list)]], # -1
 		'0B7E' => ['guild_member_add', 'a4 a4 v5 V4 Z24', [qw(ID charID hair_style hair_color sex jobID lv contribution online position lastLoginTime name)]], # 60 TODO
 		# 'C350' => ['senbei_vender_items_list'], #new senbei vender, need research
+
+		# '0A86' => ['gameguard_request'],
+		# '0A87' => ['gameguard_request'],
+
 	};
 
 	# Item RECORD Struct's

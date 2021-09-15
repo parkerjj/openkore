@@ -1,9 +1,9 @@
 ###### Localization settings ######
-locale
+locale zh_CN
 
 ###### Localization compatibility ######
 # Enable to make Kore compatible with old 2.0 configs.
-locale_compat 0
+locale_compat 1
 
 ###### Wx interface settings ######
 wxHideConsole 1

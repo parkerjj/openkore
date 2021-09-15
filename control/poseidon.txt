@@ -7,7 +7,7 @@ ragnarokserver_port=6900
 # Query Server
 # Here you'll define the IP Address and the Port where Poseidon
 # will keep waiting for open kore to connect and send the GG/HS queries.
-queryserver_ip=127.0.0.1
+queryserver_ip=10.168.84.69
 queryserver_port=24390
 
 # Server Type
@@ -15,6 +15,14 @@ queryserver_port=24390
 # to the poseidon operate properly !
 # The available server types for now are : Default, bRO_.* (check servertypes.txt)
 # You should modify this if you're having problems with char list.
-server_type=Default
 
-debug=0
+
+
+#server_type=Default
+#server_type=twRO_2021-06-21
+server_type=cRO_2021-06-25
+#server_type=kRO_2021-06-30
+
+
+
+debug=2

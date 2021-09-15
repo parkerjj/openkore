@@ -7178,6 +7178,14 @@ sub map_changed {
 		oldMap => $oldMap,
 	});
 	$timeout{ai}{time} = time;
+
+
+
+	#Sent this to Poseidon
+	return if (($net->version == 1 && $masterServer->{gameGuard} ne '2') || ($masterServer->{gameGuard} == 0));
+	Poseidon::Client::getInstance()->query(
+		substr($args->{RAW_MSG}, 0, $args->{RAW_MSG_SIZE})
+	);
 }
 
 # Parse 0A3B with structure
@@ -9661,22 +9669,22 @@ sub special_item_obtain {
 
 	stripLanguageCode(\$holder);
 	if ($args->{type} == TYPE_BOXITEM) {
-		my $c = unpack 'c', $args->{etc};
-		my $unpack = ($c == 2) ?  'c/v' : 'c/V';
-		@{$args}{qw(box_nameID)} = unpack $unpack, $args->{etc};
+		# my $c = unpack 'c', $args->{etc};
+		# my $unpack = ($c == 2) ?  'c/v' : 'c/V';
+		# @{$args}{qw(box_nameID)} = unpack $unpack, $args->{etc};
 
-		my $box_item_name = itemNameSimple($args->{box_nameID});
-		$source_name = $box_item_name;
-		$source_item_id = $args->{box_nameID};
+		# my $box_item_name = itemNameSimple($args->{box_nameID});
+		# $source_name = $box_item_name;
+		# $source_item_id = $args->{box_nameID};
 
-		if ($msgTable[1629]) {
-			$msg = sprintf($msgTable[1629], $holder, $box_item_name, $item_name)."\n";
-		} else {
-			$msg = TF("%s has got %s from %s.\n", $holder, $item_name, $box_item_name);
-		}
+		# if ($msgTable[1629]) {
+		# 	$msg = sprintf($msgTable[1629], $holder, $box_item_name, $item_name)."\n";
+		# } else {
+		# 	$msg = TF("%s has got %s from %s.\n", $holder, $item_name, $box_item_name);
+		# }
 
-		chatLog("GM", $msg) if ($config{logSystemChat});
-		message $msg, 'schat';
+		# chatLog("GM", $msg) if ($config{logSystemChat});
+		# message $msg, 'schat';
 
 	} elsif ($args->{type} == TYPE_MONSTER_ITEM) {
 		@{$args}{qw(len monster_name)} = unpack 'c Z*', $args->{etc};
